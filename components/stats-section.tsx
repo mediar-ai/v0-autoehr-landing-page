@@ -34,7 +34,7 @@ function AnimatedCounter({ target, duration = 2 }: { target: number; duration?: 
 
 export function StatsSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const stats = [
     { value: 75, suffix: "%", label: "Reduction in manual entry time" },

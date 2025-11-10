@@ -8,10 +8,10 @@ import { useRef } from "react"
 
 export function CTASection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.5 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
-    <section className="py-20" ref={ref}>
+    <section id="contact" className="py-20" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

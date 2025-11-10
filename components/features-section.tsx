@@ -28,7 +28,7 @@ const itemVariants = {
 
 export function FeaturesSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const features = [
     {

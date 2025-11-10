@@ -7,7 +7,7 @@ import { useRef } from "react"
 
 export function SecuritySection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const securityFeatures = [
     "HIPAA compliance built-in",

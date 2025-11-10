@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import ScheduleCallButton from "@/components/schedule-call/ScheduleCallButton"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -66,9 +67,11 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button asChild size="lg" className="px-8 py-6 text-lg h-auto">
-              <a href="#contact">Get a walkthrough</a>
-            </Button>
+            <ScheduleCallButton
+              buttonText="Get a walkthrough"
+              className="px-8 py-6 text-lg h-auto"
+              size="lg"
+            />
           </motion.div>
 
           <motion.div
