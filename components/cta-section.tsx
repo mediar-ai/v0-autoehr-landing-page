@@ -19,22 +19,8 @@ export function CTASection() {
           transition={{ duration: 0.5 }}
         >
           <Card className="p-12 bg-gradient-to-br from-accent/10 via-accent/5 to-background border-accent/20 text-center max-w-4xl mx-auto relative overflow-hidden">
-            <motion.div
-              className="absolute top-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl"
-              animate={{
-                x: [0, 50, 0],
-                y: [0, 30, 0],
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              className="absolute bottom-0 right-0 w-72 h-72 bg-accent/20 rounded-full blur-3xl"
-              animate={{
-                x: [0, -50, 0],
-                y: [0, -30, 0],
-              }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            />
+            <div className="absolute top-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl opacity-30" />
+            <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/20 rounded-full blur-3xl opacity-30" />
 
             <div className="relative z-10">
               <motion.div
@@ -65,21 +51,15 @@ export function CTASection() {
                 consultation and see how we can help in 2 weeks.
               </motion.p>
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                >
-                  <ScheduleCallButton
-                    buttonText="Get a walkthrough"
-                    className="px-8 py-6 text-lg h-auto"
-                  />
-                </motion.div>
+                <ScheduleCallButton
+                  buttonText="Get a walkthrough"
+                  className="px-8 py-6 text-lg h-auto"
+                />
               </motion.div>
               <motion.div
                 className="mt-8 text-sm text-muted-foreground"

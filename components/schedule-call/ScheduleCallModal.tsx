@@ -76,7 +76,7 @@ export default function ScheduleCallModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-background border border-border rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="relative bg-background border border-border rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
         <div className="bg-background border-b border-border px-6 py-4 flex items-center justify-between shrink-0">
           <div>
             <h2 className="text-xl font-semibold">Get a Walkthrough</h2>
