@@ -1,158 +1,116 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import ScheduleCallButton from "@/components/schedule-call/ScheduleCallButton"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 export function CTASection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.5 })
 
   return (
-    <section id="contact" className="py-20 bg-muted/20">
+    <section className="py-20" ref={ref}>
       <div className="container mx-auto px-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="p-12 bg-gradient-to-br from-accent/10 via-accent/5 to-background border-accent/20 text-center max-w-4xl mx-auto relative overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Badge variant="secondary" className="mb-4">
-                <span className="text-accent mr-2">📅</span>
-                Get Started
-              </Badge>
-            </motion.div>
-            <motion.h2
-              className="text-4xl md:text-5xl font-bold mb-6 text-balance"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Ready to{" "}
-              <span className="text-accent">automate your intake?</span>
-            </motion.h2>
-            <motion.p
-              className="text-lg text-muted-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Schedule a walkthrough and see how autoEHR works for your practice.
-            </motion.p>
-          </div>
+              className="absolute top-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl"
+              animate={{
+                x: [0, 50, 0],
+                y: [0, 30, 0],
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute bottom-0 right-0 w-72 h-72 bg-accent/20 rounded-full blur-3xl"
+              animate={{
+                x: [0, -50, 0],
+                y: [0, -30, 0],
+              }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <Card className="p-8 bg-card/50 border-border/40 backdrop-blur-sm">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="John Doe" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Work Email</Label>
-                    <Input id="email" type="email" placeholder="john@clinic.com" />
-                  </div>
-                </div>
+            <div className="relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.1, duration: 0.5 }}
+              >
+                <Badge variant="secondary" className="mb-4">
+                  <span className="text-accent mr-2">📅</span>
+                  Get Started
+                </Badge>
+              </motion.div>
+              <motion.h2
+                className="text-4xl md:text-5xl font-bold mb-6 text-balance"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
+                Ready to <span className="text-accent">automate your intake?</span>
+              </motion.h2>
+              <motion.p
+                className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              >
+                Transform your patient intake with HIPAA-first automation. Get started with a free
+                consultation and see how we can help in 2 weeks.
+              </motion.p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <ScheduleCallButton
+                    buttonText="Get a walkthrough"
+                    className="px-8 py-6 text-lg h-auto"
+                  />
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="mt-8 text-sm text-muted-foreground"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                No PHI collected on this form • HIPAA compliant
+              </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="organization">Organization</Label>
-                    <Input id="organization" placeholder="Your Clinic" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="role">Role</Label>
-                    <Select>
-                      <SelectTrigger id="role">
-                        <SelectValue placeholder="Select role" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="admin">Admin</SelectItem>
-                        <SelectItem value="ops">Operations</SelectItem>
-                        <SelectItem value="it">IT</SelectItem>
-                        <SelectItem value="clinical">Clinical</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="ehr">EHR System</Label>
-                    <Select>
-                      <SelectTrigger id="ehr">
-                        <SelectValue placeholder="Select EHR" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="epic">Epic</SelectItem>
-                        <SelectItem value="cerner">Cerner</SelectItem>
-                        <SelectItem value="athena">Athenahealth</SelectItem>
-                        <SelectItem value="ecw">eClinicalWorks</SelectItem>
-                        <SelectItem value="allscripts">Allscripts</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="intakes">Monthly Intakes</Label>
-                    <Select>
-                      <SelectTrigger id="intakes">
-                        <SelectValue placeholder="Select range" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0-100">0-100</SelectItem>
-                        <SelectItem value="100-500">100-500</SelectItem>
-                        <SelectItem value="500-1000">500-1,000</SelectItem>
-                        <SelectItem value="1000+">1,000+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-
-                <Button type="submit" size="lg" className="w-full">
-                  Get a walkthrough
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  No PHI collected on this form. We'll reach out to schedule a demo.
-                </p>
-              </form>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            className="mt-12 text-center"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-accent transition-colors">Security</a>
-              <a href="#" className="hover:text-accent transition-colors">Privacy</a>
-              <a href="#" className="hover:text-accent transition-colors">Terms</a>
+              <motion.div
+                className="mt-12 flex items-center justify-center gap-6 text-sm text-muted-foreground"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+              >
+                <a href="#" className="hover:text-accent transition-colors">Security</a>
+                <a href="#" className="hover:text-accent transition-colors">Privacy</a>
+                <a href="#" className="hover:text-accent transition-colors">Terms</a>
+              </motion.div>
+              <motion.div
+                className="mt-4 text-xs text-muted-foreground"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              >
+                © 2025 autoEHR. All rights reserved.
+              </motion.div>
             </div>
-            <div className="mt-4 text-xs text-muted-foreground">
-              © 2025 autoEHR. All rights reserved.
-            </div>
-          </motion.div>
-        </div>
+          </Card>
+        </motion.div>
       </div>
     </section>
   )
