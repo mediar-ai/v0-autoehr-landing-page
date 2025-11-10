@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "autoEHR - HIPAA-first website intake to EHR",
   description: "Turn website forms into clean, structured EHR data. Less typing. Fewer errors. Faster care.",
   keywords: "EHR automation, website intake to EHR, HIPAA automation, patient intake automation, healthcare workflow automation",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "autoEHR - HIPAA-first website intake to EHR",
     description: "Automate patient forms, eligibility, and routing into your EHR—without manual data entry.",

@@ -22,9 +22,6 @@ export function Header() {
             <Link href="#features" className="text-sm hover:text-accent transition-colors">
               Features
             </Link>
-            <Link href="#workflow" className="text-sm hover:text-accent transition-colors">
-              How it works
-            </Link>
             <Link href="#security" className="text-sm hover:text-accent transition-colors">
               Security
             </Link>
