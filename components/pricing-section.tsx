@@ -11,7 +11,7 @@ export function PricingSection() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section id="pricing" className="py-20 bg-muted/20">
+    <section id="pricing" className="py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">

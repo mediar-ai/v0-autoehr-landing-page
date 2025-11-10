@@ -28,7 +28,7 @@ export function WorkflowSection() {
   ]
 
   return (
-    <section id="workflow" className="py-20 bg-muted/20">
+    <section id="workflow" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.div
