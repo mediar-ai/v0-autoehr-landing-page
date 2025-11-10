@@ -11,11 +11,32 @@ HIPAA-first website intake to EHR automation platform.
 - Shadcn UI components
 - Responsive design
 - SEO optimized
+- Loops.so integration for lead capture
+- HIPAA-focused messaging
 
 ## Getting Started
 
+1. Install dependencies:
+
 ```bash
 npm install
+```
+
+2. Set up environment variables:
+
+Copy `.env.local.example` to `.env.local` and add your Loops.so API credentials:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Edit `.env.local` and add:
+- `LOOPS_API_KEY` - Your Loops.so API key
+- `LOOPS_TRANSACTIONAL_ID` - Your transactional email template ID
+
+3. Run the development server:
+
+```bash
 npm run dev
 ```
 
