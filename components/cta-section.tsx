@@ -71,20 +71,10 @@ export function CTASection() {
               </motion.div>
 
               <motion.div
-                className="mt-12 flex items-center justify-center gap-6 text-sm text-muted-foreground"
+                className="mt-12 text-xs text-muted-foreground"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-              >
-                <a href="#" className="hover:text-accent transition-colors">Security</a>
-                <a href="#" className="hover:text-accent transition-colors">Privacy</a>
-                <a href="#" className="hover:text-accent transition-colors">Terms</a>
-              </motion.div>
-              <motion.div
-                className="mt-4 text-xs text-muted-foreground"
-                initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
               >
                 © 2025 autoEHR. All rights reserved.
               </motion.div>
