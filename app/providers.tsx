@@ -9,7 +9,7 @@ const LANDING_PAGE_NAME = 'autoehr'
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+    const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY || 'phc_NFSaZUao49XckpqaeyB3lIEKrFXhhXbKaI81jqZ8yn9';
     const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com';
 
     if (posthogKey) {
