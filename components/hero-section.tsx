@@ -85,37 +85,39 @@ export function HeroSection() {
             <div className="text-center mb-4">
               <span className="text-xs sm:text-sm text-muted-foreground">backed by</span>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-              <Image
-                src="/LG TV.png"
-                alt="LG Technology Ventures"
-                width={140}
-                height={56}
-                className="w-[100px] sm:w-[140px] h-auto opacity-90 hover:opacity-100 transition-opacity brightness-0 invert"
-              />
-              <Image
-                src="/finc.png"
-                alt="Founders Inc"
-                width={160}
-                height={27}
-                className="w-[110px] sm:w-[160px] h-auto opacity-90 hover:opacity-100 transition-opacity brightness-0 invert"
-              />
-              <Image
-                src="/embedding-vc-logo.png"
-                alt="Embedding Ventures"
-                width={100}
-                height={40}
-                className="w-[70px] sm:w-[100px] h-auto opacity-90 hover:opacity-100 transition-opacity brightness-0 invert"
-              />
-              <Image
-                src="/seedclub.svg"
-                alt="Seed Club Ventures"
-                width={110}
-                height={44}
-                className="w-[80px] sm:w-[110px] h-auto opacity-90 hover:opacity-100 transition-opacity brightness-0 invert"
-              />
-              <span className="text-xs sm:text-sm font-semibold text-white/90">Top Harvest Capital</span>
-              <span className="text-xs sm:text-sm font-semibold text-white/90">Principal Venture Partners</span>
+            <div className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8">
+              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+                <Image
+                  src="/LG TV.png"
+                  alt="LG Technology Ventures"
+                  width={140}
+                  height={56}
+                  className="w-[100px] sm:w-[140px] h-auto opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <Image
+                  src="/finc.png"
+                  alt="Founders Inc"
+                  width={160}
+                  height={27}
+                  className="w-[110px] sm:w-[160px] h-auto opacity-80 hover:opacity-100 transition-opacity invert"
+                />
+                <Image
+                  src="/embedding-vc-logo.png"
+                  alt="Embedding Ventures"
+                  width={100}
+                  height={40}
+                  className="w-[70px] sm:w-[100px] h-auto opacity-80 hover:opacity-100 transition-opacity invert"
+                />
+                <Image
+                  src="/seedclub.svg"
+                  alt="Seed Club Ventures"
+                  width={110}
+                  height={44}
+                  className="w-[80px] sm:w-[110px] h-auto opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <span className="text-xs sm:text-sm font-semibold text-white/80">Top Harvest Capital</span>
+                <span className="text-xs sm:text-sm font-semibold text-white/80">Principal Venture Partners</span>
+              </div>
             </div>
           </motion.div>
 
