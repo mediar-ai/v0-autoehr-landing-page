@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Loader2, X } from 'lucide-react';
+import posthog from 'posthog-js';
 
 interface ScheduleCallModalProps {
   open: boolean;
@@ -62,7 +63,7 @@ export default function ScheduleCallModal({
         console.error('Main endpoint failed, backup:', response2);
       }
 
-      onSuccess();
+      posthog.capture('form_submitted', { landing_page: 'autoehr', form_type: 'schedule_call', company: formData.company, role: formData.role, company_size: formData.companySize }); onSuccess();
     } catch (error) {
       console.error('Error submitting form:', error);
       alert('There was an error submitting the form. Please try again.');

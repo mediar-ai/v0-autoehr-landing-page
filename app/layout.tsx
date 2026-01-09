@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
+import { PostHogProvider } from "./providers"
 
 export const metadata: Metadata = {
   title: "autoEHR - HIPAA-First Website Intake to EHR Automation",
@@ -48,7 +49,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
         <Analytics />
       </body>
     </html>
